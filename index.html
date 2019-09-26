@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feature URL Builder</title>
+        <style></style>
+        <script type="text/javascript">
+
+            function buildURI(){
+                //get textbox value
+                var txtJiraID = document.getElementById("txtJiraID");
+                
+                
+                //build URL
+                var txtURIPrefix = "https://feature-";
+                var txtURISuffux = ".inshur.com";
+                var txtURI = txtURIPrefix + txtJiraID.value + txtURISuffux;
+                
+                //output
+                txtOutput = document.getElementById("txtOutput");
+                //txtOutput.value = txtURI;
+                //window.location.href = txtURI;
+                //window.location.href = 'https://www.google.co.uk';
+
+                
+                
+                //update list
+                var maxItems = 3;                                 // Set max list length
+                var newItem = document.createElement("LI");       // Create a <li> node
+                var textNode = document.createTextNode(txtURI);  // Create a text node
+                var newLink = document.createElement("A");
+                
+                //newLink.setAttribute('class', 'signature');
+                newLink.setAttribute('href', txtURI);
+                newLink.setAttribute('target', '_blank');
+
+                newLink.appendChild(textNode);                    // Append the text to <a>
+                newItem.appendChild(newLink);                     // Append a to li
+
+                //write URL to top of list
+                var list = document.getElementById("ulFeatureList");
+                list.insertBefore(newItem, list.childNodes[0]);
+                
+                // If the <ul> element now has more than maxItems, remove its last child node
+                var itemCount = list.children.length;
+                //var itemCount = list.childElementCount(); //not working??
+                txtOutput.value = itemCount;
+                //window.alert("tezt");
+
+                if (itemCount > maxItems) {
+                    list.removeChild(list.childNodes[maxItems]);
+                }
+
+
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Feature URL Builder</h1>
+        <form action=''>
+            <fieldset>
+                <label>Enter Jira ID: </label>
+                <input type="text"
+                    id = "txtJiraID"
+                    value="IN-" />
+                <input type="button"
+                    value="Launch Nuke"
+                    onclick="buildURI()" />
+                <input type="text"
+                    id = "txtOutput" />  
+
+            </fieldset>
+        </form>
+        <h1>Previous Entries</h1>
+        <ul id="ulFeatureList">
+                <li><a href="https://feature-IN-3333.inshur.com" target="_blank">https://feature-IN-3333.inshur.com</a></li><li><a href="https://feature-IN-2222.inshur.com" target="_blank">https://feature-IN-2222.inshur.com</a></li><li><a href="https://feature-IN-1111.inshur.com" target="_blank">https://feature-IN-1111.inshur.com</a></li>
+        </ul>
+    </body>
+</html>
