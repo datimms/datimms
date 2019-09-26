@@ -6,7 +6,7 @@
         <script type="text/javascript">
 
             function buildURI(){
-                //get textbox value
+                //get textbox 
                 var txtJiraID = document.getElementById("txtJiraID");
                 
                 
@@ -19,20 +19,21 @@
                 txtOutput = document.getElementById("txtOutput");
                 //txtOutput.value = txtURI;
                 //window.location.href = txtURI;
-                //window.location.href = 'https://www.google.co.uk';
-
-                
+                window.open(
+                    txtURI,
+                    '_blank' // <- _blank for new window. _self for same window.
+                );
+                                
                 
                 //update list
                 var maxItems = 3;                                 // Set max list length
                 var newItem = document.createElement("LI");       // Create a <li> node
-                var textNode = document.createTextNode(txtURI);  // Create a text node
-                var newLink = document.createElement("A");
-                
-                //newLink.setAttribute('class', 'signature');
+                                
+                var newLink = document.createElement("A");       // Create and populate link href                
                 newLink.setAttribute('href', txtURI);
                 newLink.setAttribute('target', '_blank');
 
+                var textNode = document.createTextNode(txtURI);  // Create a text node for link text
                 newLink.appendChild(textNode);                    // Append the text to <a>
                 newItem.appendChild(newLink);                     // Append a to li
 
@@ -43,14 +44,12 @@
                 // If the <ul> element now has more than maxItems, remove its last child node
                 var itemCount = list.children.length;
                 //var itemCount = list.childElementCount(); //not working??
-                txtOutput.value = itemCount;
+                //txtOutput.value = itemCount;
                 //window.alert("tezt");
 
                 if (itemCount > maxItems) {
                     list.removeChild(list.childNodes[maxItems]);
                 }
-
-
 
             }
         </script>
@@ -58,7 +57,7 @@
 
     <body>
         <h1>Feature URL Builder</h1>
-        <form action=''>
+        <form >
             <fieldset>
                 <label>Enter Jira ID: </label>
                 <input type="text"
@@ -67,14 +66,14 @@
                 <input type="button"
                     value="Launch Nuke"
                     onclick="buildURI()" />
-                <input type="text"
-                    id = "txtOutput" />  
+                <!-- <input type="text"
+                    id = "txtOutput" />   -->
 
             </fieldset>
         </form>
         <h1>Previous Entries</h1>
         <ul id="ulFeatureList">
-                <!--Optional seed data-->
+                <!--stub seed data-->
                 <!-- <li><a href="https://feature-IN-3333.inshur.com" target="_blank">https://feature-IN-3333.inshur.com</a></li><li><a href="https://feature-IN-2222.inshur.com" target="_blank">https://feature-IN-2222.inshur.com</a></li><li><a href="https://feature-IN-1111.inshur.com" target="_blank">https://feature-IN-1111.inshur.com</a></li> -->
         </ul>
     </body>
