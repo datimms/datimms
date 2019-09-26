@@ -1,1 +1,10 @@
-if (localStorage.getItem("test"))
+if(localStorage.length>0) {
+    //value is stored
+  } else {
+    //storage is empty
+  }
+  
+  
+function setValue() {
+    
+}
