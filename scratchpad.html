@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scratchpad</title>
+        <style></style>
+        <!--<script src="storage.js"></script>-->
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Featurely</h1>
+            <h2>Feature Server URL Builder</h2>
+        </div>
+        
+        <form >
+            <fieldset>
+                <label>Enter Jira ID: </label>
+                <input type="text"
+                    id = "txtJiraID"
+                    value="IN-" />
+                <input type="button"
+                    value="Launch Nuke"
+                    onclick="setNew()" />
+                <!-- <input type="text"
+                    id = "txtOutput" />   -->
+
+            </fieldset>
+        </form>
+        
+        <div class="list">
+            <h2>Previous Entries</h2>
+            <div id="list">
+                <ul id="ulFeatureList">
+                        <!--stub seed data-->
+                        <!-- <li><a href="https://feature-IN-3333.inshur.com" target="_blank">https://feature-IN-3333.inshur.com</a></li><li><a href="https://feature-IN-2222.inshur.com" target="_blank">https://feature-IN-2222.inshur.com</a></li><li><a href="https://feature-IN-1111.inshur.com" target="_blank">https://feature-IN-1111.inshur.com</a></li> -->
+                </ul>
+            </div>
+        </div>
+
+       
+
+
+    </body>
+<script src="storage.js"></script>
+</html>
