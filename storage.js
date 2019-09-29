@@ -1,29 +1,22 @@
 
-var sw = true;
-var strEmpty = "You have not generated any links yet.";
-var strFull = "abc";
-var itemCount = 0;
 
-var list = document.getElementById("list");
-// var newp = document.createElement("p");
-//     newp.innerHTML = strEmpty;
-//     list.appendChild(newp);
-
-
-
-// if(!localStorage.getItem("???"))
-
-if (sw == true) {
   
-  var newp = document.createElement("p");
-  newp.innerHTML = strEmpty;
-  list.appendChild(newp);
-}
-else {
-  var newp = document.createElement("p");
-  newp.innerHTML = strFull;
-  list.appendChild(newp);
-}
+  var strEmpty = "No items have been saved or could not read storage.";
+  var uriList = [];
+  var list = document.getElementById("initMessage");
+
+
+  // if(!localStorage.getItem("???"))
+
+  if (uriList.length == 0) {
+    //array is empty
+    list.innerHTML = strEmpty;
+  }
+  // else {
+  //   var newp = document.createElement("p");
+  //   newp.innerHTML = strFull;
+  //   list.appendChild(newp);
+  // }
 
 
 
