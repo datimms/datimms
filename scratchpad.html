@@ -12,7 +12,7 @@
             <h2>Feature Server URL Builder</h2>
         </div>
         
-        <form >
+        <form class="builder">
             <fieldset>
                 <label>Enter Jira ID: </label>
                 <input type="text"
@@ -30,8 +30,9 @@
         <div class="list">
             <h2>Previous Entries</h2>
             <div id="list">
-                <p id="initMessage"></p>
+                
                 <ul id="ulFeatureList">
+                        <p id="initMessage">Hello! I'm here all by myself. Again. Maybe if the code is broken I will show but until then I will be invisible. Sadface.</p>
                         <!--stub seed data-->
                         <!-- <li><a href="https://feature-IN-3333.inshur.com" target="_blank">https://feature-IN-3333.inshur.com</a></li><li><a href="https://feature-IN-2222.inshur.com" target="_blank">https://feature-IN-2222.inshur.com</a></li><li><a href="https://feature-IN-1111.inshur.com" target="_blank">https://feature-IN-1111.inshur.com</a></li> -->
                 </ul>
@@ -39,8 +40,8 @@
         </div>
 
         
-    <script src="storage.js"></script>
-    
+    <script src="uribuilder.js"></script>
+    <script>checkStorage()</script>
     </body>
 
 </html>
