@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Scratchpad</title>
+        <link rel="icon" href="data:,">
         <style></style>
         <!--<script src="storage.js"></script>-->
     </head>
@@ -12,15 +13,15 @@
             <h2>Feature Server URL Builder</h2>
         </div>
         
-        <form class="builder">
+        <form class="builder" action="">
             <fieldset>
                 <label>Enter Jira ID: </label>
                 <input type="text"
                     id = "txtJiraID"
                     value="IN-" />
-                <input type="button"
-                    value="Launch Nuke"
-                    onclick="setNew()" />
+                <button type="button"
+                    
+                    onclick="builder()">Launch Nuke</button>
                 <!-- <input type="text"
                     id = "txtOutput" />   -->
 
@@ -37,11 +38,16 @@
                         <!-- <li><a href="https://feature-IN-3333.inshur.com" target="_blank">https://feature-IN-3333.inshur.com</a></li><li><a href="https://feature-IN-2222.inshur.com" target="_blank">https://feature-IN-2222.inshur.com</a></li><li><a href="https://feature-IN-1111.inshur.com" target="_blank">https://feature-IN-1111.inshur.com</a></li> -->
                 </ul>
             </div>
+            <form class="reset" action="">
+                <fieldset style="border: 0;">
+                    <button type="button" onclick="resetHistory()">Clear List</button>    
+                </fieldset>
+            </form>
         </div>
 
         
     <script src="uribuilder.js"></script>
-    <script>checkStorage()</script>
+    <script>initialise()</script>
     </body>
 
 </html>
