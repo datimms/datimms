@@ -18,6 +18,14 @@
     display nothing message
 */
 
+//toggle logging
+//console.log = function() {}
+
+
+
+
+
+
 var uriList = [];
 var storageKey = "servers";
 
