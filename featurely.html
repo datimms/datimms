@@ -13,27 +13,21 @@
             <h2>Feature Server URL Builder</h2>
         </div>
         
-        <form class="builder" action="">
+        
             <fieldset>
                 <label>Enter Jira ID: </label>
-                <input type="text"
-                    id = "txtJiraID"
-                    value="IN-" />
-                <button type="button"
-                    
-                    onclick="builder()">Launch Nuke</button>
-                <!-- <input type="text"
-                    id = "txtOutput" />   -->
-
+                <input type="text" id = "txtJiraID" value="IN-" autofocus >
+                <button type="button" id="btnSubmit" onclick="builder()">Launch Nuke</button>
+                    <!-- <input type="reset"/> -->
             </fieldset>
-        </form>
+        
         
         <div class="list">
             <h2>Previous Entries</h2>
             <div id="list">
                 
                 <ul id="ulFeatureList">
-                        <p id="initMessage">Hello! I'm here all by myself. Again. Maybe if the code is broken I will show but until then I will be invisible. Sadface.</p>
+                        <p id="initMessage">Hello! I'm here all by myself. Again. Maybe if the code is broken I will show but until then I will be invisible. :Sadface:</p>
                         <!--stub seed data-->
                         <!-- <li><a href="https://feature-IN-3333.inshur.com" target="_blank">https://feature-IN-3333.inshur.com</a></li><li><a href="https://feature-IN-2222.inshur.com" target="_blank">https://feature-IN-2222.inshur.com</a></li><li><a href="https://feature-IN-1111.inshur.com" target="_blank">https://feature-IN-1111.inshur.com</a></li> -->
                 </ul>
@@ -46,8 +40,21 @@
         </div>
 
         
+
+        <script>
+            var input = document.getElementById("txtJiraID");
+            input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    //return false;
+                    document.getElementById("btnSubmit").click();
+                }
+            });
+        </script>
+        
     <script src="uribuilder.js"></script>
     <script>initialise()</script>
+    
     </body>
 
 </html>
