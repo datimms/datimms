@@ -18,7 +18,7 @@
     display nothing message
 */
 
-//toggle logging
+//disable logging
 //console.log = function() {}
 
 
@@ -172,6 +172,10 @@ function builder() {
     updateUriList();
     setLocalStorage(storageKey,uriList);
     renderHistory(uriList);
+    window.open(
+        buildUri(document.getElementById("txtJiraID").value),
+        '_blank' // <- _blank for new window. _self for same window.
+    );
 }
 
 function resetHistory() {
