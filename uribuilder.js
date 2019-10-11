@@ -23,9 +23,6 @@
 
 
 
-
-
-
 var uriList = [];
 var storageKey = "servers";
 
@@ -98,7 +95,6 @@ function clearLocalStorage(key) {
 
 function renderHistory(items) {
     //output array to html bullet list
-    //var uriList = ["milk", "eggs", "frosted flakes", "salami", "juice"];
     var list = document.getElementById("ulFeatureList");
     var i = "";
     clearHistory();
@@ -135,7 +131,6 @@ function buildUri(jiraID){
 
 function updateUriList() {
     // arrays stuff
-    //var uriList = ["milk", "eggs", "frosted flakes", "salami", "juice"];
     var maxItems = 5;
     var newUri = buildUri(document.getElementById("txtJiraID").value);
     console.log("updateUriList: unmodified array: " + uriList);
