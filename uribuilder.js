@@ -25,6 +25,7 @@
 
 var uriList = [];
 var storageKey = "servers";
+var maxItems = 5;
 
 function initialise() {
     try {
@@ -129,10 +130,16 @@ function buildUri(jiraID){
     return uri;
 }
 
-function updateUriList() {
+function buildUriFromTextbox() {
+    var uri = buildUri(document.getElementById("txtJiraID").value);
+    console.log("buildUriFromTextbox: " + uri);
+    return uri;
+}
+
+
+function updateUriList(newUri) {
     // arrays stuff
-    var maxItems = 5;
-    var newUri = buildUri(document.getElementById("txtJiraID").value);
+    
     console.log("updateUriList: unmodified array: " + uriList);
     
     //check to see if newUri has already been saved in array
@@ -164,7 +171,7 @@ function updateUriList() {
 
 function builder() {
     console.log("submit: button clicked")
-    updateUriList();
+    updateUriList(buildUriFromTextbox());
     setLocalStorage(storageKey,uriList);
     renderHistory(uriList);
     window.open(
@@ -177,4 +184,14 @@ function resetHistory() {
     clearLocalStorage();
     clearHistory();
     uriList = [];
+}
+
+//detect click on a link
+window.onclick = function (ev) {
+    if (ev.target.localName == 'a') {
+        console.log(ev.target.text + ' was clicked!');
+        updateUriList(ev.target.text);
+        setLocalStorage(storageKey,uriList);
+     renderHistory(uriList);
+    }
 }
