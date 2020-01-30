@@ -38,18 +38,24 @@
             </form>
         </div>
 
+        <div>
+            <h2>Usage Instructions</h2>
+            <p>In the box, enter the Jira ID of the feature branch (eg IN30-1234).
+                <br>Click the button or press enter key.
+                <br> The OU link will open in a new tab and the URL will be saved under history in descending order of last access.
+                <br> By default, 5 items will be stored (cannot currently be changed in this demo version).
+                <span style="display: none;">
+                <br> If you run the page from C: drive, the page will save max 5 items you type in until you refresh. Therefore it's recommend you run this from a local web server.
+                <br> If you run the page from a web server, the page will save max 5 items and will remember between sessions.
+            </span>
+                <br>If you click a link in history, it will move to the top of the list. 
+                <br>The Clear List button will empty the history.
+                <br><br> NB You may need to adjust your browser privacy settings if you have particularly aggressive settings. Please enable javascript and web storage.
+            </p>
+        </div>
+
         
 
-        <script>
-            var input = document.getElementById("txtJiraID");
-            input.addEventListener("keyup", function (event) {
-                if (event.keyCode === 13) {
-                    event.preventDefault();
-                    //return false;
-                    document.getElementById("btnSubmit").click();
-                }
-            });
-        </script>
         
     <script src="uribuilder.js"></script>
     <script>initialise()</script>

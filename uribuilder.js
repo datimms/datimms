@@ -195,3 +195,14 @@ window.onclick = function (ev) {
      renderHistory(uriList);
     }
 }
+
+//detect enter key press
+var input = document.getElementById("txtJiraID");
+input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        //return false;
+        document.getElementById("btnSubmit").click();
+    }
+});
+
